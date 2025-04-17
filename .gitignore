@@ -60,6 +60,7 @@ cover/
 local_settings.py
 db.sqlite3
 db.sqlite3-journal
+*.db
 
 # Flask stuff:
 instance/
@@ -92,7 +93,7 @@ ipython_config.py
 #   However, in case of collaboration, if having platform-specific dependencies or dependencies
 #   having no cross-platform support, pipenv may install dependencies that don't work, or not
 #   install all needed dependencies.
-#Pipfile.lock
+# Pipfile.lock
 
 # UV
 #   Similar to Pipfile.lock, it is generally recommended to include uv.lock in version control.
@@ -135,6 +136,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+secret/
 
 # Spyder project settings
 .spyderproject
@@ -145,6 +147,8 @@ venv.bak/
 
 # mkdocs documentation
 /site
+secret/
+
 
 # mypy
 .mypy_cache/

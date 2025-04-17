@@ -1,0 +1,90 @@
+<!-- templates/admin.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Администрирование тарифов</title>
+    <style>
+        /* Аналогичные стили как в index.html */
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .container {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        input,
+        button {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-group { margin-bottom: 15px; }
+        input { width: 200px; padding: 5px; }
+        .href-button {
+            margin-top: 2rem;
+          
+        }
+        .href-button a{
+            text-decoration: none;
+            color:#07223f;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>Управление тарифами</h1>
+    <form method="post">
+        <div class="form-group">
+            <label>Сборный груз (руб/тоннокилометр):</label>
+            <input type="number" step="0.1" name="consolidated_per_tonkm" 
+                   value="{{ tariff.consolidated_per_tonkm }}" required>
+        </div>
+        
+        <div class="form-group">
+            <label>Единичный груз (руб/тоннокилометр):</label>
+            <input type="number" step="0.1" name="single_per_tonkm" 
+                   value="{{ tariff.single_per_tonkm }}" required>
+        </div>
+        
+        <div class="form-group">
+            <label>Погрузка (руб/тонну):</label>
+            <input type="number" step="0.1" name="loading_per_ton" 
+                   value="{{ tariff.loading_per_ton }}" required>
+        </div>
+        
+        <div class="form-group">
+            <label>Разгрузка (руб/тонну):</label>
+            <input type="number" step="0.1" name="unloading_per_ton" 
+                   value="{{ tariff.unloading_per_ton }}" required>
+        </div>
+        
+        <button type="submit">Сохранить</button>
+    </form>
+</div>
+    <div class="href-button"><a target="_blank" href="/">перейти на страницу Расчет доставки</a></div>
+    
+</body>
+</html>
